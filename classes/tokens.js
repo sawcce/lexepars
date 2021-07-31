@@ -7,6 +7,7 @@ class Token {
     this.line = line | 0;
     this.column = column | 0;
     this.skipped = skipped;
+    this.length = value.length;
   }
 
   toString() {
@@ -18,6 +19,7 @@ class TokenType {
   constructor({ name, regex, skipped }) {
     this.name = name;
     this.regex = new RegExp("^" + regex);
+    this.canContainLineBreaks = regex.indexOf("\\n") != -1
     this.skipped = skipped | false;
   }
 }
