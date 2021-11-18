@@ -1,3 +1,4 @@
+///<reference path="./tokens.d.ts" />
 class Token {
   constructor({ tokenType, value, start, end, line, column, skipped }) {
     this.tokenType = tokenType;
@@ -18,8 +19,8 @@ class Token {
 class TokenType {
   constructor({ name, regex, skipped }) {
     this.name = name;
-    this.regex = new RegExp("^" + regex);
-    this.canContainLineBreaks = regex.indexOf("\\n") != -1
+    this.regex = new RegExp("^" + regex.source);
+    this.canContainLineBreaks = regex.toString().indexOf("\\n") != -1
     this.skipped = skipped | false;
   }
 }

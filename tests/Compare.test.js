@@ -1,7 +1,7 @@
 const { compare, whichOneOf, compareMultiple } = require("../methods/compare");
 const { TokenType } = require("../classes/tokens.js");
 
-let WhiteSpace = new TokenType({ name: "WhiteSpace", regex: ' +' });
+let WhiteSpace = new TokenType({ name: "WhiteSpace", regex: ' +', skipped: true });
 let StringToken = new TokenType({ name: "String", regex: '".*?"' });
 
 it("should match", () => {
