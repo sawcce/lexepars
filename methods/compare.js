@@ -1,3 +1,4 @@
+///<reference path="./compare.d.ts" />
 const { Token } = require("../classes/tokens");
 
 function compare(tokenType, str) {
@@ -11,7 +12,7 @@ function compare(tokenType, str) {
   }
 }
 
-function whichOneOf(tokenTypes, str) {
+function tokenTypes(tokenTypes, str) {
   for (tokenType of tokenTypes) {
     let [match, err] = compare(tokenType, str);
     if (!err) {
